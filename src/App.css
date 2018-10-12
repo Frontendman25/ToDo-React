@@ -1,32 +1,95 @@
-.App {
-  text-align: center;
+.table {
+	margin: 0 auto;
+	text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+table {
+	border-collapse: collapse;
+	padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+tr,
+td,
+th {
+	padding: 5px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+tr:nth-child(odd) {
+	background-color: #f0f0f0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tr:nth-child(even) {
+	background-color: #f6f6f6;
+}
+
+button {
+	margin-right: 15px;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	color: #000;
+	cursor: pointer;
+}
+
+button:last-child {
+	margin-right: 0;
+}
+
+.btn_change {
+	width: 120px;
+	background-color: #fff;
+	text-align: right;
+}
+
+.formWrap {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.search {
+	margin-right: 15px;
+	border-radius: 5px;
+	padding: 7px;
+}
+
+.create {
+	background-color: limegreen;
+	color: #fff;
+}
+
+.create:hover {
+	background-color: mediumseagreen;
+}
+
+.edit {
+	background-color: yellow;
+}
+
+.edit:hover {
+	background-color: #ffeb3b;
+}
+
+.delete {
+	background-color: firebrick;
+	color: white;
+}
+
+.delete:hover {
+	background-color: #d22222;
+	color: white;
+}
+
+.task {
+	color: orangered;
+	cursor: pointer;
+}
+
+.done {
+	color: green;
+}
+
+.done:after {
+	margin-left: 10px;
+	content: '✓';
 }
