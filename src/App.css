@@ -15,11 +15,11 @@ th {
 }
 
 tr:nth-child(odd) {
-	background-color: #f0f0f0;
+	background-color: #e2e2e2;
 }
 
 tr:nth-child(even) {
-	background-color: #f6f6f6;
+	background-color: #f0f0f0;
 }
 
 button {
@@ -36,14 +36,18 @@ button:last-child {
 }
 
 .btn_change {
-	width: 120px;
+	width: 140px;
 	background-color: #fff;
 	text-align: right;
 }
 
+.btn_change_edit {
+	padding: 0;
+}
+
 .formWrap {
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	text-align: center;
 }
 
@@ -70,6 +74,15 @@ button:last-child {
 	background-color: #ffeb3b;
 }
 
+.edit_value {
+	display: block;
+	outline: none;
+	border: none;
+	padding: 15px 0 15px 10px;
+	width: 100%;
+	background-color: lightgoldenrodyellow;
+}
+
 .delete {
 	background-color: firebrick;
 	color: white;
@@ -83,6 +96,10 @@ button:last-child {
 .task {
 	color: orangered;
 	cursor: pointer;
+}
+
+.task_edit{
+	padding: 0;
 }
 
 .done {

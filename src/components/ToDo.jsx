@@ -12,13 +12,15 @@ class ToDo extends Component {
 		tasks: [
 			{
 				title: 'Create application for PrivatBank', 
-				isDone: false
+				isDone: true,
+				edit: false
 			},
 			{
 				title: 'Get the job',
-				isDone: false
-			}
-		]
+				isDone: false,
+				edit: false
+			},
+		],
 	}
 	
 	createNewTask = (e) => {
@@ -44,11 +46,28 @@ class ToDo extends Component {
 	handleToggleTaskStatus = (item, e) => {
 		item.isDone = !item.isDone;
 		
-		this.forceUpdate();
+		this.setState({
+			tasks: this.state.tasks,
+		})
 	}
 	
+	handleEdit(item, e){
+		item.edit = !item.edit;
+		
+		this.setState({
+			...this.state
+		})
+		
+//		stateEdit = this.state.edit;
+	}
+	
+	handleEditedValue(){
+		
+	}
+
   render() {
 		let {tasks} = this.state;
+		
     return (
 			<div className="todoList">
 				<div className="formWrap">
@@ -56,12 +75,12 @@ class ToDo extends Component {
 					<button className="create" onClick={this.createNewTask}>Create</button>
 				</div>
 				<table className="table" style={{width: "80%"}}>
-					{tasks.map((item) => {
+					{tasks.map((item, index) => {
 						return (
-							<tr>
-								<Task task={item} onToggleTaskStatus={this.handleToggleTaskStatus.bind(this, item)} />
+							<tr key={index}>
+								<Task onEditedValue={this.handleEditedValue.bind(this)} edit={item.edit} task={item} onToggleTaskStatus={this.handleToggleTaskStatus.bind(this, item)} />
 								
-								<Buttons onDelete={this.deleteTask.bind(this, item)} />
+								<Buttons edit={item.edit} onEdit={this.handleEdit.bind(this, item)} onDelete={this.deleteTask.bind(this, item)} />
 							</tr>
 						)
 					})}
